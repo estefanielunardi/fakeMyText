@@ -19,7 +19,7 @@ export const ChatForm : React.FC<Props> = ({ onAdd }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="chat-form">
             <div>
                 <select value={sender} onChange={e => setSender(e.target.value as Sender)}>
                     <option value="user1">Usuario 1 (derecha)</option>

@@ -10,9 +10,19 @@ function App() {
 
     return (
     <>
-      <div>
-          <ChatForm onAdd={addMessage} />
-      </div>
+        <div className="app-root">
+            <aside className="left-panel">
+                <ChatForm onAdd={addMessage} />
+                <div className="controls">
+                    <button>
+                        Generar imagen
+                    </button>
+                    <button>
+                        Limpiar
+                    </button>
+                </div>
+            </aside>
+        </div>
       <h1>FakeMyTest</h1>
     </>
   )
