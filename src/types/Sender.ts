@@ -1,0 +1,1 @@
+export type Sender = 'user1' | 'user2';
