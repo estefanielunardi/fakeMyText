@@ -1,3 +1,4 @@
+import * as React from "react";
 import { useState } from "react";
 import type { Sender } from '../types/Sender';
 
@@ -14,7 +15,7 @@ export const ChatForm : React.FC<Props> = ({ onAdd }) => {
         e.preventDefault();
         const trimmed = text.trim();
         if (!trimmed) return;
-        onAdd(trimmed, sender);
+        onAdd(sender, trimmed);
         setText('');
     };
 
