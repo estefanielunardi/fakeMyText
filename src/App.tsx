@@ -9,22 +9,23 @@ export default function App() {
     };
 
     return (
-        <div className="app-root">
-            <h1>FakeMyTest</h1>
+        <>
+            <div className="header">FakeMyTest</div>
 
-            <div style={{ display: "flex", gap: "20px" }}>
-                <Chat ref={chatRef} />
+            <div className="controls-wrapper">
+                <button onClick={handleGenerateImage}>
+                    Generar imagen
+                </button>
 
-                <aside className="controls">
-                    <button onClick={handleGenerateImage}>
-                        Generar imagen
-                    </button>
-
-                    <button onClick={() => window.location.reload()}>
-                        Limpiar
-                    </button>
-                </aside>
+                <button onClick={() => window.location.reload()}>
+                    Limpiar
+                </button>
             </div>
-        </div>
+
+            <div className="app-root">
+                <Chat ref={chatRef} />
+            </div>
+        </>
     );
 }
+

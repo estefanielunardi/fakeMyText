@@ -1,24 +1,27 @@
 .chat-container {
-    width: 400px;
-    height: 600px;
-    background: #e5ddd5; /* color WhatsApp */
-    border-radius: 12px;
+    width: 380px;
+    height: 90vh;
+    max-height: 700px;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAACzXTVzAAAAGElEQVQIW2NgYGAgH/Hw/w8Bv/T/R6c8AADy5gU+Yc7n3gAAAABJRU5ErkJggg=='); /* Patrón de fondo sutil de WhatsApp */
+    background-color: #e5ddd5;
+    border-radius: 0;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    border: 1px solid #ccc;
+    border: none;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
 .messages-list {
     flex: 1;
-    padding: 12px;
+    padding: 10px 8px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 4px;
     overflow-y: auto;
 }
 
-/* Scroll suave */
+/* Scroll suave (mantener) */
 .messages-list::-webkit-scrollbar {
     width: 6px;
 }

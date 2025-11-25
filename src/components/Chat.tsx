@@ -47,10 +47,11 @@ export const Chat = forwardRef<ChatRef>((_, ref) => {
                     <MessageBubble key={msg.id} message={msg} />
                 ))}
             </div>
-
-            <ChatForm onAdd={handleAddMessage} />
+            <div className="input-panel">
+                <ChatForm onAdd={handleAddMessage} />
+            </div>
         </div>
-    );
+);
 });
 
 Chat.displayName = "Chat";
