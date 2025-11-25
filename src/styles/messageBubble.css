@@ -1,0 +1,40 @@
+.message-row {
+    display: flex;
+    width: 100%;
+}
+
+.message-row.left {
+    justify-content: flex-start;
+}
+
+.message-row.right {
+    justify-content: flex-end;
+}
+
+.bubble {
+    max-width: 65%;
+    padding: 8px 12px;
+    border-radius: 8px;
+    position: relative;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.bubble-user2 { /* izquierda */
+    background: white;
+    border: 1px solid #ddd;
+}
+
+.bubble-user1 { /* derecha */
+    background: #dcf8c6; /* verde WhatsApp */
+}
+
+.bubble-text {
+    margin-bottom: 4px;
+}
+
+.bubble-meta {
+    text-align: right;
+    font-size: 10px;
+    opacity: 0.6;
+}

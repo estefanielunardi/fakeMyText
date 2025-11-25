@@ -1,0 +1,28 @@
+.chat-container {
+    width: 400px;
+    height: 600px;
+    background: #e5ddd5; /* color WhatsApp */
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #ccc;
+}
+
+.messages-list {
+    flex: 1;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto;
+}
+
+/* Scroll suave */
+.messages-list::-webkit-scrollbar {
+    width: 6px;
+}
+.messages-list::-webkit-scrollbar-thumb {
+    background: #b0b0b0;
+    border-radius: 3px;
+}
