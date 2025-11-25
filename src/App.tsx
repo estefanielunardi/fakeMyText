@@ -1,31 +1,12 @@
-import {ChatForm} from "./components/ChatForm.tsx";
-
-
+import { Chat } from "./components/Chat";
 
 function App() {
-
-    function addMessage() {
-
-    }
-
     return (
-    <>
         <div className="app-root">
-            <aside className="left-panel">
-                <ChatForm onAdd={addMessage} />
-                <div className="controls">
-                    <button>
-                        Generar imagen
-                    </button>
-                    <button>
-                        Limpiar
-                    </button>
-                </div>
-            </aside>
+            <h1>FakeMyTest</h1>
+            <Chat />
         </div>
-      <h1>FakeMyTest</h1>
-    </>
-  )
+    );
 }
 
-export default App
+export default App;
