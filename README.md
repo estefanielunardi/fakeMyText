@@ -1,73 +1,35 @@
-# React + TypeScript + Vite
+# 💬 FakeMyTest: Generador de Chat de WhatsApp a Imagen
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación web construida con React que permite a los usuarios simular conversaciones de chat al estilo WhatsApp y exportarlas como una imagen PNG.
 
-Currently, two official plugins are available:
+## ✨ Características Principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **Interfaz Realista:** Diseño, colores, y burbujas de mensaje que imitan la estética de WhatsApp (incluyendo punteros triangulares en las burbujas).
+* **Doble Check:** Implementación visual del doble check azul de "Leído" en los mensajes del Usuario 1.
+* **Selección de Remitente:** Permite alternar fácilmente entre dos usuarios:
+    * **Usuario 1 (Derecha):** Burbuja verde. Muestra el doble check azul de "Leído".
+    * **Usuario 2 (Izquierda):** Burbuja blanca.
+* **Exportación a Imagen (`.png`):** Utiliza la librería `html-to-image` para capturar el área del chat y generar una descarga automática de la conversación.
+* **Diseño Responsivo:** El contenedor del chat está centrado y se adapta a diferentes tamaños de pantalla, mejorando la experiencia móvil.
+* **Estilos Modulares:** El CSS está dividido en archivos para una fácil gestión: `App.css` (layout principal), `chat.css` (contenedor del chat) y `messageBubble.css` (detalles de la burbuja).
 
-## React Compiler
+## 🚀 Tecnologías Utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Frontend:** React (Hooks y Componentes Funcionales)
+* **Lenguaje:** TypeScript
+* **Estilos:** CSS puro, enfocado en simular la UI de WhatsApp.
+* **Utilidades:** `html-to-image` para la manipulación del DOM y exportación.
 
-## Expanding the ESLint configuration
+## 🛠️ Cómo Usar
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1.  **Selección:** Elige el remitente (`Usuario 1` o `Usuario 2`) en el menú desplegable.
+2.  **Mensaje:** Escribe el contenido en el campo de texto y haz clic en **"Agregar"**. La hora se añade automáticamente.
+3.  **Exportar:** Cuando la conversación esté lista, presiona **"Generar imagen"**.
+4.  **Limpiar:** Usa **"Limpiar"** para reiniciar la aplicación.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📂 Estructura del Código
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+El proyecto sigue una estructura modular:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+![El proyecto sigue una estructura modular](public/estructura.png)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
